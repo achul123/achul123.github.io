@@ -116,6 +116,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .skill a {
@@ -131,11 +132,13 @@ body {
 .skill i {
     font-size: 2em;
     margin-bottom: 10px;
+    transition: color 0.3s;
 }
 
 .skill span {
     font-size: 1.2em;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 /* Styles des compétences spécifiques */
@@ -143,40 +146,45 @@ body {
     background-color: #007396;
 }
 
-.skill.java a {
-    color: #fff;
+.skill.java:hover i,
+.skill.java:hover span {
+    color: #007396;
 }
 
 .skill.html {
     background-color: #E44D26;
 }
 
-.skill.html a {
-    color: #fff;
+.skill.html:hover i,
+.skill.html:hover span {
+    color: #E44D26;
 }
 
 .skill.css {
     background-color: #2965F1;
 }
 
-.skill.css a {
-    color: #fff;
+.skill.css:hover i,
+.skill.css:hover span {
+    color: #2965F1;
 }
 
 .skill.jade {
     background-color: #00A85D;
 }
 
-.skill.jade a {
-    color: #fff;
+.skill.jade:hover i,
+.skill.jade:hover span {
+    color: #00A85D;
 }
 
 .skill.skript {
     background-color: #000000;
 }
 
-.skill.skript a {
-    color: #fff;
+.skill.skript:hover i,
+.skill.skript:hover span {
+    color: #000000;
 }
 
 /* Styles de la section de contact */
