@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mon Profil GitHub</title>
+</head>
+<body>
+    <header>
+        <h1>Mon Profil GitHub</h1>
+    </header>
+    <section id="repositories">
+        <h2>Mes Dépôts GitHub</h2>
+        <ul id="repo-list">
+            <!-- Cette liste sera remplie par JavaScript -->
+        </ul>
+    </section>
+    <section id="skills">
+        <h2>Mes Compétences</h2>
+        <ul>
+            <li>Java</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Jade</li>
+            <li>Skript</li>
+        </ul>
+    </section>
+    <script>
+        const repoList = document.getElementById('repo-list');
+
+        // Remplacez 'VOTRE_NOM_D_UTILISATEUR' par votre nom d'utilisateur GitHub
+        const username = 'achul123';
+
+        // Utilisation de l'API GitHub pour obtenir les dépôts
+        fetch(`https://api.github.com/users/${username}/repos`)
+            .then(response => response.json())
+            .then(repositories => {
+                repositories.forEach(repo => {
+                    const repoItem = document.createElement('li');
+                    repoItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
+                    repoList.appendChild(repoItem);
+                });
+            })
+            .catch(error => {
+                console.error('Une erreur s\'est produite lors de la récupération des dépôts :', error);
+            });
+    </script>
+</body>
+</html>
 
