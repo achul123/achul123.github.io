@@ -21,9 +21,9 @@
 <section class="repositories">
     <div class="container">
         <h2 class="section-title">Mes Projets GitHub</h2>
-        <ul class="repo-list" id="repo-list">
-            <!-- Cette liste sera remplie par JavaScript -->
-        </ul>
+        <div class="repo-grid" id="repo-grid">
+            <!-- Cette grille sera remplie par JavaScript -->
+        </div>
     </div>
 </section>
     <section class="skills">
@@ -39,16 +39,30 @@
         </div>
     </section>
 <script>
-    const repoList = document.getElementById('repo-list');
+    const repoGrid = document.getElementById('repo-grid');
     const username = 'achul123';
 
     fetch(`https://api.github.com/users/${username}/repos`)
         .then(response => response.json())
         .then(repositories => {
             repositories.forEach(repo => {
-                const repoItem = document.createElement('li');
-                repoItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
-                repoList.appendChild(repoItem);
+                const repoItem = document.createElement('div');
+                repoItem.classList.add('repo-item');
+
+                repoItem.innerHTML = `
+                    <div class="repo-header">
+                        <h3 class="repo-name">${repo.name}</h3>
+                        <a class="repo-link" href="${repo.html_url}" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M17 8a2 2 0 00-2-2 2 2 0 00-2 2 2 2 0 00-2-2 2 2 0 00-2 2 2 2 0 00-2-2 2 2 0 00-2 2v8a2 2 0 002 2 2 2 0 002-2 2 2 0 002 2 2 2 0 002-2 2 2 0 002 2V8zm-7 12a7 7 0 007-7 7 7 0 00-7-7 7 7 0 00-7 7 7 7 0 007 7z" />
+                            </svg>
+                            Voir le dépôt
+                        </a>
+                    </div>
+                    <p class="repo-description">${repo.description || 'Aucune description disponible.'}</p>
+                `;
+
+                repoGrid.appendChild(repoItem);
             });
         })
         .catch(error => {
