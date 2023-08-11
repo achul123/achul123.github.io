@@ -143,20 +143,40 @@ body {
     background-color: #007396;
 }
 
+.skill.java a {
+    color: #fff;
+}
+
 .skill.html {
     background-color: #E44D26;
+}
+
+.skill.html a {
+    color: #fff;
 }
 
 .skill.css {
     background-color: #2965F1;
 }
 
+.skill.css a {
+    color: #fff;
+}
+
 .skill.jade {
     background-color: #00A85D;
 }
 
+.skill.jade a {
+    color: #fff;
+}
+
 .skill.skript {
     background-color: #000000;
+}
+
+.skill.skript a {
+    color: #fff;
 }
 
 /* Styles de la section de contact */
