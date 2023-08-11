@@ -1,16 +1,12 @@
-/* Styles généraux */
-body {
-    font-family: Arial, sans-serif;
+/* Réinitialisation des styles */
+body, h1, h2, ul, li {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f0f0f0;
 }
 
 .container {
@@ -19,29 +15,78 @@ header {
     padding: 20px;
 }
 
-/* Styles spécifiques */
-#repositories, #skills {
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Styles de l'en-tête */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
 }
 
-ul {
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Styles des sections */
+section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Styles de la liste de dépôts */
+#repo-list {
     list-style: none;
     padding: 0;
 }
 
-ul li {
+#repo-list li {
     margin-bottom: 10px;
+}
+
+#repo-list a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#repo-list a:hover {
+    color: #0056b3;
+}
+
+/* Styles de la liste de compétences */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    background-color: #007bff;
+    border-radius: 4px;
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
 }
 
 /* Media queries pour la réactivité */
 @media (max-width: 768px) {
-    #repositories, #skills {
-        margin: 10px;
-        padding: 10px;
+    section {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
     }
 }
-
