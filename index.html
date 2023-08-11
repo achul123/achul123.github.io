@@ -38,25 +38,22 @@
             </ul>
         </div>
     </section>
-    <script>
-        const repoList = document.getElementById('repo-list');
+<script>
+    const repoList = document.getElementById('repo-list');
+    const username = 'achul123';
 
-        // Remplacez 'VOTRE_NOM_D_UTILISATEUR' par votre nom d'utilisateur GitHub
-        const username = 'achul123';
-
-        // Utilisation de l'API GitHub pour obtenir les dépôts
-        fetch(`https://api.github.com/users/${username}/repos`)
-            .then(response => response.json())
-            .then(repositories => {
-                repositories.forEach(repo => {
-                    const repoItem = document.createElement('li');
-                    repoItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
-                    repoList.appendChild(repoItem);
-                });
-            })
-            .catch(error => {
-                console.error('Une erreur s\'est produite lors de la récupération des dépôts :', error);
+    fetch(`https://api.github.com/users/${username}/repos`)
+        .then(response => response.json())
+        .then(repositories => {
+            repositories.forEach(repo => {
+                const repoItem = document.createElement('li');
+                repoItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
+                repoList.appendChild(repoItem);
             });
-    </script>
+        })
+        .catch(error => {
+            console.error('Une erreur s\'est produite lors de la récupération des dépôts :', error);
+        });
+</script>
 </body>
 </html>
