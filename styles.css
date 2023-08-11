@@ -1,76 +1,88 @@
 /* Réinitialisation des styles */
-body, h1, h2, ul, li {
+body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: 'Helvetica', sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #101010;
+    color: #fff;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 /* Styles de l'en-tête */
-header {
-    background-color: #333;
-    color: white;
+.header {
+    background-color: #000;
     text-align: center;
-    padding: 2em 0;
+    padding: 20px 0;
 }
 
-header h1 {
+.header-title {
     font-size: 2.5em;
-    margin-bottom: 0.5em;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+/* Styles de la section hero */
+.hero {
+    background-image: linear-gradient(to bottom, #000, #222);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.2em;
+    opacity: 0.8;
 }
 
 /* Styles des sections */
-section {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+.section-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 /* Styles de la liste de dépôts */
-#repo-list {
+.repo-list {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
 }
 
-#repo-list li {
-    margin-bottom: 10px;
-}
-
-#repo-list a {
+.repo-list a {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-#repo-list a:hover {
+.repo-list a:hover {
     color: #0056b3;
 }
 
 /* Styles de la liste de compétences */
-#skills ul {
+.skills-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
 }
 
-#skills li {
+.skills-list li {
     background-color: #007bff;
     border-radius: 4px;
     color: white;
@@ -81,12 +93,23 @@ h2 {
 
 /* Media queries pour la réactivité */
 @media (max-width: 768px) {
-    section {
-        margin: 10px 0;
-        padding: 15px;
+    .container {
+        padding: 30px 15px;
     }
 
-    header h1 {
+    .header-title {
         font-size: 2em;
+    }
+
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-description {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 1.5em;
     }
 }
