@@ -187,6 +187,15 @@ body {
     color: #000000;
 }
 
+.skill.js {
+    background-color: #000000;
+}
+
+.skill.js:hover i,
+.skill.js:hover span {
+    color: #000000;
+}
+
 /* Styles de la section de contact */
 .contact {
     background-color: #111;
