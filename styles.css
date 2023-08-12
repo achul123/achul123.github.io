@@ -187,13 +187,13 @@ body {
     color: #000000;
 }
 
-.skill.js {
-    background-color: #000000;
+.skill.javascript {
+    background-color: #f0db4f;
 }
 
-.skill.js:hover i,
-.skill.js:hover span {
-    color: #000000;
+.skill.javascript:hover i,
+.skill.javascript:hover span {
+    color: #f0db4f;
 }
 
 /* Styles de la section de contact */
